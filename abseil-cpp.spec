@@ -1,8 +1,7 @@
 # Force out of source build
 %undefine __cmake_in_source_build
-
 Name:           abseil-cpp
-Version:        20200923.3
+Version:        20210324.2
 Release:        1
 Summary:        C++ Common Libraries
 
@@ -13,6 +12,7 @@ Source0:        https://github.com/abseil/abseil-cpp/archive/%{version}/%{name}-
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  make
+Conflicts: grpc < 1.31.0-5
 
 %description
 Abseil is an open-source collection of C++ library code designed to augment
@@ -32,7 +32,6 @@ and we now want to provide those resources to the C++ community as a whole.
 %package devel
 Summary: Development files for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
-Conflicts: grpc < 1.31.0-5
 
 %description devel
 Development headers for %{name}
@@ -50,12 +49,16 @@ Development headers for %{name}
 %license LICENSE
 %doc FAQ.md README.md UPGRADES.md
 %{_libdir}/libabsl_*.so
+%{_libdir}/libabsl_*.so.*
 
 %files devel
 %{_includedir}/absl
 %{_libdir}/cmake/absl
-%{_libdir}/libabsl_*.so
+%{_libdir}/pkgconfig/*.pc
 
 %changelog
+* Fri Oct 15 2021 licihua <licihua@huawei.com> - 20210324.2-1 
+- update to 20210324.2
+
 * Mon Sep 27 2021 licihua <licihua@huawei.com> - 20200923.3-1
 - package init
