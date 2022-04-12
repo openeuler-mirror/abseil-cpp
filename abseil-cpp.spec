@@ -6,13 +6,14 @@
 
 Name:           abseil-cpp
 Version:        20210324.2
-Release:        1
+Release:        2
 Summary:        C++ Common Libraries
 
 License:        ASL 2.0
 URL:            https://abseil.io
 Source0:        https://github.com/abseil/abseil-cpp/archive/%{version}/%{name}-%{version}.tar.gz
-
+#https://github.com/abseil/abseil-cpp/commit/808bc202fc13e85a7948db0d7fb58f0f051200b1
+Patch0:         Add-support-of-loongarch64.patch
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  make
@@ -61,5 +62,8 @@ Development headers for %{name}
 %{_libdir}/pkgconfig/*.pc
 
 %changelog
+* Mon Apr 11 2022 liyanan <liyanan32@h-partners.com> - 20210324.2-2
+- Add support of loongarch64
+
 * Wed Jun 23 2021 gaihuiying <gaihuiying1@huawei.com> - 20210324.2-1
 - package init
