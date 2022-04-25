@@ -2,10 +2,10 @@
 %undefine __cmake_in_source_build
 
 # Installed library version
-%global lib_version 2103.0.1
+%global lib_version 2111.0.0
 
 Name:           abseil-cpp
-Version:        20210324.2
+Version:        20211102.0
 Release:        1
 Summary:        C++ Common Libraries
 
@@ -61,5 +61,8 @@ Development headers for %{name}
 %{_libdir}/pkgconfig/*.pc
 
 %changelog
+* Wed Apr 13 2022 YukariChiba <i@0x7f.cc> - 20211102.0-1
+- Upgrade version to 20211102.0
+
 * Wed Jun 23 2021 gaihuiying <gaihuiying1@huawei.com> - 20210324.2-1
 - package init
